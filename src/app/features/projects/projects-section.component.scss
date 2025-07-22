@@ -22,6 +22,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
 
     .section-title {
       font-size: 2.5rem;
@@ -81,6 +82,8 @@
       .project-dots {
         display: flex;
         gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
 
         .project-dot {
           width: 0.75rem;
@@ -111,6 +114,8 @@
       overflow-x: auto;
       padding-bottom: 1rem;
       scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      width: 100%;
 
       // Hide scrollbar but keep functionality
       &::-webkit-scrollbar {
@@ -123,6 +128,7 @@
     .project-card {
       flex: 0 0 calc(33.333% - 1.33rem);
       min-width: 350px;
+      max-width: 400px;
       display: flex;
       flex-direction: column;
       padding: 2rem;
@@ -214,10 +220,24 @@
   }
 }
 
-@media (max-width: 768px) {
+// Responsive Design
+@media (max-width: 1199px) and (min-width: 768px) {
+  .projects-section {
+    .projects-content {
+      .project-card {
+        flex: 0 0 calc(50% - 1rem);
+        min-width: 300px;
+        max-width: 350px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
   .projects-section {
     .projects-content {
       padding: 0 1rem;
+      width: 100%;
 
       .project-navigation {
         gap: 1rem;
@@ -242,12 +262,16 @@
       .projects-grid {
         gap: 1rem;
         padding-bottom: 0.5rem;
+        width: 100%;
       }
 
       .project-card {
-        flex: 0 0 calc(100% - 0.67rem);
-        min-width: 280px;
+        flex: 0 0 100%;
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
         padding: 1.5rem;
+        box-sizing: border-box;
 
         .project-number {
           font-size: 2rem;
