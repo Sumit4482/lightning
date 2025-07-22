@@ -48,6 +48,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden; // Prevent scrolling
+  touch-action: pan-y; // Allow vertical touch gestures
 }
 
 // Smooth color transitions for accent colors
@@ -76,6 +77,8 @@ body {
   position: relative;
   background: var(--bg-primary);
   overflow: hidden;
+  touch-action: pan-y; // Allow vertical touch gestures
+  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
 }
 
 // Portfolio Content
@@ -163,4 +166,20 @@ html {
 *:focus {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
+}
+
+// Touch feedback styles
+@media (hover: none) and (pointer: coarse) {
+  // Mobile-specific touch feedback
+  .portfolio-container {
+    -webkit-tap-highlight-color: transparent; // Remove tap highlight on iOS
+  }
+
+  // Add subtle touch feedback for interactive elements
+  .btn,
+  .nav-dot,
+  .color-picker-toggle,
+  .project-link {
+    -webkit-tap-highlight-color: rgba(0, 220, 130, 0.1);
+  }
 }

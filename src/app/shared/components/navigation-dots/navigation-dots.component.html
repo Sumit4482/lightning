@@ -1,4 +1,4 @@
-<div class="nav-dots">
+<div [class]="navigationClasses">
     <div class="nav-dot" *ngFor="let section of sections; let i = index" [class.active]="currentSection === i"
         (click)="goToSection(i)" [title]="getSectionTitle(i)">
     </div>

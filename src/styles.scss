@@ -11,6 +11,7 @@ html,
 body {
   height: 100%;
   overflow: hidden; /* Prevent scrolling */
+  touch-action: pan-y; /* Allow vertical touch gestures */
 }
 
 body {
@@ -21,6 +22,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-primary);
   color: var(--text-primary);
+}
+
+/* Portfolio container touch handling */
+.portfolio-container {
+  touch-action: pan-y; /* Allow vertical touch gestures */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 /* Focus styles for accessibility */

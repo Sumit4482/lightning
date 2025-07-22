@@ -12,8 +12,11 @@ import { NavigationService } from '../../../core/services/navigation.service';
 export class NavigationDotsComponent implements OnInit {
   currentSection = 0;
   sections = [0, 1, 2, 3];
+  isMobile = false;
 
-  constructor(private navigationService: NavigationService) {}
+  constructor(private navigationService: NavigationService) {
+    this.checkIfMobile();
+  }
 
   ngOnInit(): void {
     this.navigationService.currentSection$.subscribe((section) => {
@@ -27,5 +30,25 @@ export class NavigationDotsComponent implements OnInit {
 
   getSectionTitle(index: number): string {
     return this.navigationService.getSectionTitle(index);
+  }
+
+  private checkIfMobile(): void {
+    if (typeof window !== 'undefined') {
+      this.isMobile = window.innerWidth <= 768;
+      window.addEventListener('resize', () => {
+        this.isMobile = window.innerWidth <= 768;
+      });
+    }
+  }
+
+  get navigationClasses(): string {
+    let classes = 'nav-dots';
+
+    if (this.isMobile && this.currentSection === 2) {
+      // In projects section on mobile - reposition to top
+      classes += ' nav-dots-mobile-projects';
+    }
+
+    return classes;
   }
 }

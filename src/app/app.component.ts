@@ -37,6 +37,11 @@ import { ContactSectionComponent } from './features/contact/contact-section.comp
 export class AppComponent implements OnInit {
   title = 'Portfolio';
   isDarkTheme = true;
+  private touchStartY = 0;
+  private touchEndY = 0;
+  private touchStartTime = 0;
+  private readonly SWIPE_THRESHOLD = 50; // Minimum distance for a swipe
+  private readonly SWIPE_TIME_THRESHOLD = 300; // Maximum time for a swipe (ms)
 
   constructor(
     private themeService: ThemeService,
@@ -64,6 +69,38 @@ export class AppComponent implements OnInit {
       } else {
         // Scrolling up
         this.navigationService.previousSection();
+      }
+    }
+  }
+
+  @HostListener('touchstart', ['$event'])
+  onTouchStart(event: TouchEvent): void {
+    this.touchStartY = event.touches[0].clientY;
+    this.touchStartTime = Date.now();
+  }
+
+  @HostListener('touchend', ['$event'])
+  onTouchEnd(event: TouchEvent): void {
+    if (!this.navigationService.isScrolling) {
+      this.touchEndY = event.changedTouches[0].clientY;
+      const touchEndTime = Date.now();
+      const swipeDistance = this.touchStartY - this.touchEndY;
+      const swipeTime = touchEndTime - this.touchStartTime;
+
+      // Check if it's a valid swipe (enough distance and fast enough)
+      if (
+        Math.abs(swipeDistance) > this.SWIPE_THRESHOLD &&
+        swipeTime < this.SWIPE_TIME_THRESHOLD
+      ) {
+        event.preventDefault();
+
+        if (swipeDistance > 0) {
+          // Swipe up - go to next section
+          this.navigationService.nextSection();
+        } else {
+          // Swipe down - go to previous section
+          this.navigationService.previousSection();
+        }
       }
     }
   }
