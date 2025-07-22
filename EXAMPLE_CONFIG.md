@@ -20,10 +20,10 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
   },
 
   skills: [
-    { name: 'React', icon: 'fab fa-react', level: 90 },           // ← Your skills
-    { name: 'TypeScript', icon: 'fab fa-js-square', level: 85 },  // ← Your skills
-    { name: 'Node.js', icon: 'fab fa-node-js', level: 80 },       // ← Your skills
-    { name: 'UI/UX Design', icon: 'fas fa-palette', level: 75 }   // ← Your skills
+    { name: 'React', level: 90 },           // ← Your skills
+    { name: 'TypeScript', level: 85 },      // ← Your skills
+    { name: 'Node.js', level: 80 },         // ← Your skills
+    { name: 'UI/UX Design', level: 75 }     // ← Your skills
   ],
 
   projects: [
@@ -72,29 +72,22 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
 - [ ] Update SEO information
 - [ ] Choose your preferred color scheme
 
-## Available Icons for Skills
+## Skill Level Guidelines
 
-Use these icon classes for your skills:
-- `fab fa-react` - React
-- `fab fa-angular` - Angular
-- `fab fa-vuejs` - Vue.js
-- `fab fa-js-square` - JavaScript/TypeScript
-- `fab fa-node-js` - Node.js
-- `fab fa-python` - Python
-- `fab fa-java` - Java
-- `fab fa-php` - PHP
-- `fab fa-html5` - HTML5
-- `fab fa-css3-alt` - CSS3
-- `fab fa-sass` - Sass
-- `fab fa-bootstrap` - Bootstrap
-- `fab fa-wordpress` - WordPress
-- `fab fa-docker` - Docker
-- `fab fa-aws` - AWS
-- `fab fa-github` - GitHub
-- `fab fa-git-alt` - Git
-- `fas fa-database` - Database
-- `fas fa-palette` - Design
-- `fas fa-mobile-alt` - Mobile Development
-- `fab fa-swift` - Swift
-- `fab fa-android` - Android
-- `fab fa-apple` - iOS 
+Use these ranges for skill levels:
+- **90-95**: Expert level
+- **80-89**: Advanced level  
+- **70-79**: Intermediate level
+- **60-69**: Beginner level
+
+## Example Skills
+
+Here are some common skills you might want to include:
+- React, Angular, Vue.js
+- TypeScript, JavaScript, Python
+- Node.js, Express, Django
+- MongoDB, PostgreSQL, MySQL
+- AWS, Docker, Kubernetes
+- Git, CI/CD, Testing
+- UI/UX Design, Figma
+- HTML/CSS, Sass, Bootstrap 

@@ -34,32 +34,16 @@ social: {
 ### Skills
 ```typescript
 skills: [
-  { name: 'Skill Name', icon: 'fab fa-icon-class', level: 95 },
+  { name: 'Skill Name', level: 95 },
   // Add more skills...
 ]
 ```
 
-**Available Icons:**
-- `fab fa-js-square` - JavaScript
-- `fab fa-angular` - Angular
-- `fab fa-react` - React
-- `fab fa-node-js` - Node.js
-- `fab fa-python` - Python
-- `fas fa-palette` - Design
-- `fas fa-database` - Database
-- `fab fa-aws` - AWS
-- `fab fa-github` - GitHub
-- `fab fa-docker` - Docker
-- `fab fa-html5` - HTML5
-- `fab fa-css3-alt` - CSS3
-- `fab fa-sass` - Sass
-- `fab fa-bootstrap` - Bootstrap
-- `fab fa-wordpress` - WordPress
-- `fab fa-php` - PHP
-- `fab fa-java` - Java
-- `fab fa-swift` - Swift
-- `fab fa-android` - Android
-- `fab fa-apple` - iOS
+**Skill Level Guidelines:**
+- 90-95: Expert level
+- 80-89: Advanced level
+- 70-79: Intermediate level
+- 60-69: Beginner level
 
 ### Projects
 ```typescript
@@ -134,10 +118,10 @@ social: {
 Replace the skills array with your own:
 ```typescript
 skills: [
-  { name: 'React', icon: 'fab fa-react', level: 90 },
-  { name: 'TypeScript', icon: 'fab fa-js-square', level: 85 },
-  { name: 'Node.js', icon: 'fab fa-node-js', level: 80 },
-  { name: 'UI/UX Design', icon: 'fas fa-palette', level: 75 }
+  { name: 'React', level: 90 },
+  { name: 'TypeScript', level: 85 },
+  { name: 'Node.js', level: 80 },
+  { name: 'UI/UX Design', level: 75 }
 ]
 ```
 
@@ -247,7 +231,7 @@ about: {
 ## Tips for Best Results
 
 1. **Keep descriptions concise** - Aim for 1-2 sentences for project descriptions
-2. **Use consistent skill levels** - Keep skill levels between 70-95 for realistic representation
+2. **Use realistic skill levels** - Keep skill levels between 60-95 for realistic representation
 3. **Include live URLs** - Always provide live project URLs when possible
 4. **Optimize images** - Use compressed images for better performance
 5. **Test your links** - Ensure all social and project links work correctly

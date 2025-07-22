@@ -3,7 +3,6 @@ import { PORTFOLIO_CONFIG, PortfolioConfig } from '../config/portfolio.config';
 
 export interface Skill {
   name: string;
-  icon: string;
   level: number;
 }
 

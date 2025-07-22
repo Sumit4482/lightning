@@ -20,7 +20,6 @@ export interface PortfolioConfig {
   // Skills
   skills: Array<{
     name: string;
-    icon: string;
     level: number;
   }>;
 
@@ -71,37 +70,38 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
   },
 
   social: {
-    linkedin: 'https://linkedin.com/in/johndoe',
-    github: 'https://github.com/johndoe',
-    twitter: 'https://twitter.com/johndoe',
+    linkedin: 'https://www.linkedin.com/in/sumitbanwakade/',
+    github: 'https://github.com/Sumit4482',
+    twitter: 'https://x.com/incompleteDSA',
   },
+
   // Languages: JavaScript, TypeScript, HTML/CSS, C++, Bash
   // Frameworks and Libraries: Angular, Node.js, Express, GraphQL, Jasmine
   // Databases and Messaging: MongoDB, MySQL, Redis, RabbitMQ
   // Developer Tools: Git, Cursor, AWS (EC2, S3), Docker, Kubernetes, Grafana, Prometheus
   skills: [
-    { name: 'TypeScript', icon: 'fab fa-js-square', level: 95 },
-    { name: 'JavaScript', icon: 'fab fa-js-square', level: 95 },
-    { name: 'HTML/CSS', icon: 'fab fa-html5', level: 95 },
-    { name: 'C++', icon: 'fab fa-c++', level: 95 },
-    { name: 'Bash', icon: 'fab fa-linux', level: 95 },
-    { name: 'Angular', icon: 'fab fa-angular', level: 95 },
-    { name: 'Node.js', icon: 'fab fa-node-js', level: 95 },
-    { name: 'Express', icon: 'fab fa-express', level: 95 },
-    { name: 'GraphQL', icon: 'fab fa-graphql', level: 95 },
-    { name: 'Jasmine', icon: 'fab fa-jasmine', level: 95 },
-    { name: 'MongoDB', icon: 'fab fa-mongodb', level: 95 },
-    { name: 'MySQL', icon: 'fab fa-mysql', level: 95 },
-    { name: 'Redis', icon: 'fab fa-redis', level: 95 },
-    { name: 'RabbitMQ', icon: 'fab fa-rabbitmq', level: 95 },
-    { name: 'Git', icon: 'fab fa-git-alt', level: 95 },
-    { name: 'AWS', icon: 'fab fa-aws', level: 95 },
-    { name: 'Docker', icon: 'fab fa-docker', level: 95 },
-    { name: 'Kubernetes', icon: 'fab fa-kubernetes', level: 95 },
-    { name: 'Grafana', icon: 'fab fa-grafana', level: 95 },
-    { name: 'Prometheus', icon: 'fab fa-prometheus', level: 95 },
-    { name: 'Cursor', icon: 'fab fa-cursor', level: 95 },
-    { name: 'Jenkins', icon: 'fab fa-jenkins', level: 95 },
+    { name: 'TypeScript', level: 95 },
+    { name: 'JavaScript', level: 95 },
+    { name: 'HTML/CSS', level: 95 },
+    { name: 'C++', level: 95 },
+    { name: 'Bash', level: 95 },
+    { name: 'Angular', level: 95 },
+    { name: 'Node.js', level: 95 },
+    { name: 'Express', level: 95 },
+    { name: 'GraphQL', level: 95 },
+    { name: 'Jasmine', level: 95 },
+    { name: 'MongoDB', level: 95 },
+    { name: 'MySQL', level: 95 },
+    { name: 'Redis', level: 95 },
+    { name: 'RabbitMQ', level: 95 },
+    { name: 'Git', level: 95 },
+    { name: 'AWS', level: 95 },
+    { name: 'Docker', level: 95 },
+    { name: 'Kubernetes', level: 95 },
+    { name: 'Grafana', level: 95 },
+    { name: 'Prometheus', level: 95 },
+    { name: 'Cursor', level: 95 },
+    { name: 'Jenkins', level: 95 },
   ],
 
   projects: [
