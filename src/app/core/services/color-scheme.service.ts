@@ -1,6 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
+import { DataService } from './data.service';
 
 export interface ColorScheme {
   name: string;
@@ -58,7 +59,10 @@ export class ColorSchemeService {
   public currentColorScheme$: Observable<ColorScheme> =
     this.currentColorSchemeSubject.asObservable();
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private dataService: DataService
+  ) {
     this.loadColorSchemePreference();
   }
 
@@ -74,7 +78,15 @@ export class ColorSchemeService {
           this.applyColorScheme(scheme);
         }
       } else {
-        this.applyColorScheme(this.colorSchemes[0]);
+        // Use default from configuration
+        const defaultSchemeName =
+          this.dataService.themeConfig.defaultColorScheme;
+        const defaultScheme =
+          this.colorSchemes.find((s) => s.name === defaultSchemeName) ||
+          this.colorSchemes[0];
+
+        this.currentColorSchemeSubject.next(defaultScheme);
+        this.applyColorScheme(defaultScheme);
       }
     }
   }

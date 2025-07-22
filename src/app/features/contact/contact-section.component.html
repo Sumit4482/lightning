@@ -2,23 +2,22 @@
     <div class="contact-content">
         <h2 class="section-title">Let's Connect</h2>
         <p class="contact-description">
-            I'm always interested in new opportunities and exciting projects.
-            Feel free to reach out if you'd like to work together.
+            {{contactInfo.description}}
         </p>
         <div class="contact-methods">
-            <a href="mailto:hello&#64;johndoe.com" class="contact-method">
+            <a [href]="'mailto:' + personalInfo.email" class="contact-method">
                 <i class="fas fa-envelope"></i>
-                <span>hello&#64;johndoe.com</span>
+                <span>{{personalInfo.email}}</span>
             </a>
-            <a href="https://linkedin.com/in/johndoe" class="contact-method">
+            <a [href]="socialLinks.linkedin" class="contact-method" target="_blank" rel="noopener">
                 <i class="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
             </a>
-            <a href="https://github.com/johndoe" class="contact-method">
+            <a [href]="socialLinks.github" class="contact-method" target="_blank" rel="noopener">
                 <i class="fab fa-github"></i>
                 <span>GitHub</span>
             </a>
-            <a href="https://twitter.com/johndoe" class="contact-method">
+            <a [href]="socialLinks.twitter" class="contact-method" target="_blank" rel="noopener">
                 <i class="fab fa-twitter"></i>
                 <span>Twitter</span>
             </a>

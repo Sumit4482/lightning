@@ -44,9 +44,9 @@ export class NavigationDotsComponent implements OnInit {
   get navigationClasses(): string {
     let classes = 'nav-dots';
 
-    if (this.isMobile && this.currentSection === 2) {
-      // In projects section on mobile - reposition to top
-      classes += ' nav-dots-mobile-projects';
+    if (this.isMobile) {
+      // On mobile - reposition to top-left for all sections
+      classes += ' nav-dots-mobile';
     }
 
     return classes;

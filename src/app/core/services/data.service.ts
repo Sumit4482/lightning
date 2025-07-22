@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { PORTFOLIO_CONFIG, PortfolioConfig } from '../config/portfolio.config';
 
 export interface Skill {
   name: string;
@@ -11,59 +12,47 @@ export interface Project {
   description: string;
   technologies: string[];
   image?: string;
+  liveUrl?: string;
+  sourceUrl?: string;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  readonly skills: Skill[] = [
-    { name: 'TypeScript', icon: 'fab fa-js-square', level: 95 },
-    { name: 'Angular', icon: 'fab fa-angular', level: 90 },
-    { name: 'React', icon: 'fab fa-react', level: 85 },
-    { name: 'Node.js', icon: 'fab fa-node-js', level: 88 },
-    { name: 'Python', icon: 'fab fa-python', level: 82 },
-    { name: 'UI/UX Design', icon: 'fas fa-palette', level: 87 },
-  ];
+  private config: PortfolioConfig = PORTFOLIO_CONFIG;
 
-  readonly projects: Project[] = [
-    {
-      title: 'E-Commerce Platform',
-      description:
-        'A full-stack e-commerce solution with real-time inventory management and payment processing.',
-      technologies: ['Angular', 'Node.js', 'MongoDB', 'Stripe'],
-    },
-    {
-      title: 'Task Management App',
-      description:
-        'Collaborative project management tool with real-time updates and team collaboration features.',
-      technologies: ['React', 'Firebase', 'TypeScript', 'Material-UI'],
-    },
-    {
-      title: 'Portfolio Website',
-      description:
-        'Modern, responsive portfolio website with light/dark theme toggle and smooth animations.',
-      technologies: ['Angular', 'SCSS', 'TypeScript', 'GSAP'],
-    },
-    {
-      title: 'E-Commerce Platform',
-      description:
-        'A full-stack e-commerce solution with real-time inventory management and payment processing.',
-      technologies: ['Angular', 'Node.js', 'MongoDB', 'Stripe'],
-    },
-    {
-      title: 'Task Management App',
-      description:
-        'Collaborative project management tool with real-time updates and team collaboration features.',
-      technologies: ['React', 'Firebase', 'TypeScript', 'Material-UI'],
-    },
-    {
-      title: 'Portfolio Website',
-      description:
-        'Modern, responsive portfolio website with light/dark theme toggle and smooth animations.',
-      technologies: ['Angular', 'SCSS', 'TypeScript', 'GSAP'],
-    },
-  ];
+  get skills(): Skill[] {
+    return this.config.skills;
+  }
+
+  get projects(): Project[] {
+    return this.config.projects;
+  }
+
+  get personalInfo() {
+    return this.config.personal;
+  }
+
+  get socialLinks() {
+    return this.config.social;
+  }
+
+  get aboutInfo() {
+    return this.config.about;
+  }
+
+  get contactInfo() {
+    return this.config.contact;
+  }
+
+  get seoInfo() {
+    return this.config.seo;
+  }
+
+  get themeConfig() {
+    return this.config.theme;
+  }
 
   getSkills(): Skill[] {
     return this.skills;
@@ -73,7 +62,13 @@ export class DataService {
     return this.projects;
   }
 
-  getSkillsPreview(count: number = 6): Skill[] {
-    return this.skills.slice(0, count);
+  getSkillsPreview(count?: number): Skill[] {
+    const skillsToShow = count || this.config.about.skillsToShow;
+    return this.skills.slice(0, skillsToShow);
+  }
+
+  // Method to update configuration (useful for dynamic updates)
+  updateConfig(newConfig: Partial<PortfolioConfig>): void {
+    this.config = { ...this.config, ...newConfig };
   }
 }

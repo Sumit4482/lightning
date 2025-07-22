@@ -34,8 +34,10 @@
                         <span class="tech-tag" *ngFor="let tech of project.technologies">{{tech}}</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">View Project</a>
-                        <a href="#" class="project-link">Source Code</a>
+                        <a *ngIf="project.liveUrl" [href]="project.liveUrl" class="project-link" target="_blank"
+                            rel="noopener">View Project</a>
+                        <a *ngIf="project.sourceUrl" [href]="project.sourceUrl" class="project-link" target="_blank"
+                            rel="noopener">Source Code</a>
                     </div>
                 </div>
             </div>

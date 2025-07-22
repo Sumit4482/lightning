@@ -2,13 +2,12 @@
     <div class="hero-content">
         <div class="hero-text">
             <h1 class="hero-title">
-                <span class="greeting">Hi, I'm</span>
-                <span class="name">John Doe</span>
+                <span class="greeting">{{personalInfo.greeting}}</span>
+                <span class="name">{{personalInfo.name}}</span>
             </h1>
-            <p class="hero-subtitle">Full Stack Developer</p>
+            <p class="hero-subtitle">{{personalInfo.title}}</p>
             <p class="hero-description">
-                I build things for the web. Passionate about creating elegant solutions and exceptional user
-                experiences.
+                {{personalInfo.description}}
             </p>
             <div class="hero-actions">
                 <button (click)="goToProjects()" class="btn btn-primary">View Work</button>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationService } from '../../core/services/navigation.service';
 import { ThemeService } from '../../core/services/theme.service';
+import { DataService } from '../../core/services/data.service';
 
 @Component({
   selector: 'app-hero-section',
@@ -13,10 +14,12 @@ import { ThemeService } from '../../core/services/theme.service';
 export class HeroSectionComponent implements OnInit {
   isActive = false;
   isDarkTheme = true;
+  personalInfo: any;
 
   constructor(
     private navigationService: NavigationService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private dataService: DataService
   ) {}
 
   ngOnInit(): void {
@@ -27,6 +30,8 @@ export class HeroSectionComponent implements OnInit {
     this.themeService.isDarkTheme$.subscribe((isDark) => {
       this.isDarkTheme = isDark;
     });
+
+    this.personalInfo = this.dataService.personalInfo;
   }
 
   goToProjects(): void {
@@ -38,8 +43,6 @@ export class HeroSectionComponent implements OnInit {
   }
 
   downloadResume(): void {
-    // Replace this URL with your actual Google Drive link
-    const resumeUrl = 'https://drive.google.com/your-resume-link-here';
-    window.open(resumeUrl, '_blank');
+    window.open(this.personalInfo.resumeUrl, '_blank');
   }
 }

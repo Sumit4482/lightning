@@ -43,15 +43,15 @@
   }
 }
 
-// Mobile projects section positioning
-.nav-dots-mobile-projects {
+// Mobile positioning for all sections
+.nav-dots-mobile {
   right: auto !important;
   left: 1rem !important;
   top: 1rem !important;
   transform: none !important;
   flex-direction: row !important;
   gap: 0.5rem !important;
-  z-index: 300 !important; // Even lower z-index to avoid project cards
+  z-index: 300 !important; // Lower z-index to avoid conflicts
 
   .nav-dot {
     width: 0.4rem !important;

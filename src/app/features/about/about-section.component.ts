@@ -13,6 +13,7 @@ import { DataService, Skill } from '../../core/services/data.service';
 export class AboutSectionComponent implements OnInit {
   isActive = false;
   skills: Skill[] = [];
+  aboutInfo: any;
 
   constructor(
     private navigationService: NavigationService,
@@ -24,6 +25,7 @@ export class AboutSectionComponent implements OnInit {
       this.isActive = section === 1;
     });
 
-    this.skills = this.dataService.getSkillsPreview(6);
+    this.skills = this.dataService.getSkillsPreview();
+    this.aboutInfo = this.dataService.aboutInfo;
   }
 }
