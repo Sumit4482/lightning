@@ -25,14 +25,10 @@
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
   --text-muted: #666666;
-  --accent-primary: #00dc82;
-  --accent-secondary: #00b368;
   --border-color: #333333;
   --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-heavy: 0 8px 25px rgba(0, 0, 0, 0.4);
-  --gradient-primary: linear-gradient(135deg, #00dc82 0%, #00b368 100%);
-  --gradient-accent: linear-gradient(135deg, #00dc82 0%, #00b368 100%);
 }
 
 // Global styles
@@ -54,6 +50,25 @@ body {
   overflow: hidden; // Prevent scrolling
 }
 
+// Smooth color transitions for accent colors
+:root {
+  --accent-primary: #00dc82;
+  --accent-secondary: #00b368;
+  --gradient-primary: linear-gradient(135deg, #00dc82 0%, #00b368 100%);
+  --gradient-accent: linear-gradient(135deg, #00dc82 0%, #00b368 100%);
+}
+
+// Add smooth transitions to elements that use accent colors
+.btn-primary,
+.nav-dot.active,
+.project-number,
+.contact-method i,
+.skill-tag:hover,
+.project-link:hover,
+.color-picker-toggle:hover {
+  transition: all 0.3s ease;
+}
+
 // Portfolio Container
 .portfolio-container {
   height: 100vh;
@@ -63,40 +78,146 @@ body {
   overflow: hidden;
 }
 
-// Theme Toggle Button
-.theme-toggle {
+// Color Scheme Picker
+.color-picker-container {
   position: fixed;
   top: 2rem;
   right: 2rem;
   z-index: 1000;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-light);
 
-  &:hover {
-    transform: scale(1.1);
-    box-shadow: var(--shadow-medium);
+  .color-picker-toggle {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+    color: var(--text-secondary);
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: var(--shadow-medium);
+      color: var(--accent-primary);
+      border-color: var(--accent-primary);
+    }
+
+    i {
+      font-size: 1.25rem;
+      transition: all 0.3s ease;
+    }
   }
 
-  .moon-icon,
-  .sun-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    fill: var(--text-secondary);
-    transition: fill 0.3s ease;
-  }
+  .color-picker-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 2rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-heavy);
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover .moon-icon,
-  &:hover .sun-icon {
-    fill: var(--accent-primary);
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .color-picker-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+
+      span {
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: 0.875rem;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--text-primary);
+          background: var(--bg-tertiary);
+        }
+
+        i {
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    .color-schemes-grid {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+
+      .color-scheme-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+
+        &:hover {
+          background: var(--bg-tertiary);
+          transform: translateY(-2px);
+        }
+
+        &.active {
+          border-color: var(--accent-primary);
+          background: var(--bg-tertiary);
+        }
+
+        .color-preview {
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 50%;
+          border: 2px solid var(--border-color);
+          transition: all 0.3s ease;
+        }
+
+        .scheme-name {
+          font-size: 0.75rem;
+          font-weight: 500;
+          color: var(--text-secondary);
+          text-align: center;
+        }
+
+        &:hover .color-preview {
+          border-color: var(--accent-primary);
+          transform: scale(1.1);
+        }
+
+        &.active .color-preview {
+          border-color: var(--accent-primary);
+          box-shadow: 0 0 0 2px var(--accent-primary);
+        }
+      }
+    }
   }
 }
 
@@ -679,16 +800,41 @@ body {
 
 // Responsive Design
 @media (max-width: 768px) {
-  .theme-toggle {
+  .color-picker-container {
     top: 1rem;
     right: 1rem;
-    width: 2.5rem;
-    height: 2.5rem;
 
-    .moon-icon,
-    .sun-icon {
-      width: 1rem;
-      height: 1rem;
+    .color-picker-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+
+      i {
+        font-size: 1rem;
+      }
+    }
+
+    .color-picker-dropdown {
+      min-width: 260px;
+      right: 1.5rem;
+
+      .color-schemes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 0.75rem;
+
+        .color-scheme-option {
+          padding: 0.5rem;
+
+          .color-preview {
+            width: 2rem;
+            height: 2rem;
+          }
+
+          .scheme-name {
+            font-size: 0.7rem;
+          }
+        }
+      }
     }
   }
 
