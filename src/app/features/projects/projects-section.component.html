@@ -1,0 +1,45 @@
+<section class="projects-section" [class.active]="isActive">
+    <div class="projects-content">
+        <h2 class="section-title">Selected Work</h2>
+
+        <!-- Project Navigation -->
+        <div class="project-navigation">
+            <!-- Left Arrow -->
+            <button class="nav-arrow nav-arrow-left" (click)="previousProject()" [disabled]="currentProjectIndex === 0"
+                title="Previous project">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <!-- Project Dots -->
+            <div class="project-dots">
+                <div class="project-dot" *ngFor="let project of projects.slice(0, 4); let i = index"
+                    [class.active]="currentProjectIndex === i" (click)="scrollToProject(i)"
+                    [title]="'Go to project ' + (i + 1)">
+                </div>
+            </div>
+
+            <!-- Right Arrow -->
+            <button class="nav-arrow nav-arrow-right" (click)="nextProject()"
+                [disabled]="currentProjectIndex === projects.slice(0, 3).length" title="Next project">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="projects-grid" #projectsGrid (scroll)="onProjectScroll()">
+            <div class="project-card" *ngFor="let project of projects; let i = index">
+                <div class="project-number">0{{i + 1}}</div>
+                <div class="project-info">
+                    <h3 class="project-title">{{project.title}}</h3>
+                    <p class="project-description">{{project.description}}</p>
+                    <div class="project-tech">
+                        <span class="tech-tag" *ngFor="let tech of project.technologies">{{tech}}</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
