@@ -1,0 +1,155 @@
+<div class="portfolio-container" [class.dark-theme]="isDarkTheme">
+    <!-- Theme Toggle Button -->
+    <!-- <div class="theme-toggle" (click)="toggleTheme()" title="Toggle theme">
+        <svg *ngIf="!isDarkTheme" class="moon-icon" viewBox="0 0 24 24">
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+        </svg>
+        <svg *ngIf="isDarkTheme" class="sun-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+    </div> -->
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot" *ngFor="let section of [0,1,2,3]; let i = index" [class.active]="currentSection === i"
+            (click)="goToSection(i)" [title]="getSectionTitle(i)">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="portfolio-content">
+        <!-- Hero Section -->
+        <section class="hero-section" [class.active]="currentSection === 0">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="greeting">Hi, I'm</span>
+                        <span class="name">John Doe</span>
+                    </h1>
+                    <p class="hero-subtitle">Full Stack Developer</p>
+                    <p class="hero-description">
+                        I build things for the web. Passionate about creating elegant solutions and exceptional user
+                        experiences.
+                    </p>
+                    <div class="hero-actions">
+                        <button (click)="goToSection(2)" class="btn btn-primary">View Work</button>
+                        <button (click)="goToSection(3)" class="btn btn-secondary">Get in Touch</button>
+                        <button (click)="downloadResume()" class="btn btn-resume">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" [class.active]="currentSection === 1">
+            <div class="about-content">
+                <h2 class="section-title">About</h2>
+                <p class="about-text">
+                    I'm a full-stack developer with a passion for creating beautiful, functional, and user-centered
+                    digital experiences.
+                    With expertise in modern web technologies, I bring ideas to life through clean code and thoughtful
+                    design.
+                </p>
+                <div class="skills-preview">
+                    <span class="skill-tag" *ngFor="let skill of skills.slice(0, 6)">{{skill.name}}</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" [class.active]="currentSection === 2">
+            <div class="projects-content">
+                <h2 class="section-title">Selected Work</h2>
+
+                <!-- Project Navigation -->
+                <div class="project-navigation">
+                    <!-- Left Arrow -->
+                    <button class="nav-arrow nav-arrow-left" (click)="previousProject()"
+                        [disabled]="currentProjectIndex === 0" title="Previous project">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <!-- Project Dots -->
+                    <div class="project-dots">
+                        <div class="project-dot" *ngFor="let project of projects.slice(0, 4); let i = index"
+                            [class.active]="currentProjectIndex === i" (click)="scrollToProject(i)"
+                            [title]="'Go to project ' + (i + 1)">
+                        </div>
+                    </div>
+
+                    <!-- Right Arrow -->
+                    <button class="nav-arrow nav-arrow-right" (click)="nextProject()"
+                        [disabled]="currentProjectIndex === projects.slice(0, 3).length " title="Next project">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="projects-grid" #projectsGrid (scroll)="onProjectScroll()">
+                    <div class="project-card" *ngFor="let project of projects; let i = index">
+                        <div class="project-number">0{{i + 1}}</div>
+                        <div class="project-info">
+                            <h3 class="project-title">{{project.title}}</h3>
+                            <p class="project-description">{{project.description}}</p>
+                            <div class="project-tech">
+                                <span class="tech-tag" *ngFor="let tech of project.technologies">{{tech}}</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Project</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" [class.active]="currentSection === 3">
+            <div class="contact-content">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="contact-description">
+                    I'm always interested in new opportunities and exciting projects.
+                    Feel free to reach out if you'd like to work together.
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:hello&#64;johndoe.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello&#64;johndoe.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/johndoe" class="contact-method">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/johndoe" class="contact-method">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://twitter.com/johndoe" class="contact-method">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
