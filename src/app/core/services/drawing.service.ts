@@ -51,7 +51,7 @@ export class DrawingService {
     if (!isPlatformBrowser(this.platformId)) return;
 
     // Connect to the real WebSocket server
-    const serverUrl = 'http://localhost:3000'; // Change this for production
+    const serverUrl = 'https://portfolio-production-5aea.up.railway.app'; // Railway deployment
     this.socket = io(serverUrl, {
       transports: ['websocket', 'polling'],
       timeout: 20000,

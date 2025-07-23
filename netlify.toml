@@ -1,6 +1,6 @@
 [build]
   publish = "dist/lightning/browser"
-  command = "npm run build"
+  command = "npm run build:static"
 
 [build.environment]
   NODE_VERSION = "18"

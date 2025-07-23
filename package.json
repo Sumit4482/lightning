@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:static": "ng build --configuration production --prerender false",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:lightning": "node dist/lightning/server/server.mjs"
