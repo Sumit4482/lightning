@@ -258,22 +258,41 @@ export class DrawingBoardComponent implements OnInit, OnDestroy, AfterViewInit {
   private redrawCanvas(strokes: DrawingStroke[]): void {
     if (!this.ctx || !this.canvas) return;
 
+    console.log(`Redrawing canvas with ${strokes.length} strokes`);
+
+    // Clear the canvas
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    strokes.forEach((stroke) => {
+    // Redraw all strokes in order
+    strokes.forEach((stroke, index) => {
       if (stroke.points.length === 0) return;
 
+      console.log(
+        `Drawing stroke ${index + 1}/${strokes.length} from user ${
+          stroke.userId
+        } with ${stroke.points.length} points`
+      );
+
+      // Set stroke properties
       this.ctx.strokeStyle = stroke.color;
       this.ctx.lineWidth = stroke.brushSize;
+      this.ctx.lineCap = 'round';
+      this.ctx.lineJoin = 'round';
+
+      // Begin new path for this stroke
       this.ctx.beginPath();
 
+      // Move to first point
       const firstPoint = stroke.points[0];
       this.ctx.moveTo(firstPoint.x, firstPoint.y);
 
-      stroke.points.slice(1).forEach((point) => {
+      // Draw lines to all subsequent points
+      for (let i = 1; i < stroke.points.length; i++) {
+        const point = stroke.points[i];
         this.ctx.lineTo(point.x, point.y);
-      });
+      }
 
+      // Stroke the path
       this.ctx.stroke();
     });
   }

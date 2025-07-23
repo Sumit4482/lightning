@@ -95,7 +95,11 @@ export class DrawingService {
 
     this.socket.on('drawing-stroke', (stroke: DrawingStroke) => {
       const currentStrokes = this.drawingStrokesSubject.value;
-      this.drawingStrokesSubject.next([...currentStrokes, stroke]);
+      const updatedStrokes = [...currentStrokes, stroke];
+      console.log(
+        `Received stroke from ${stroke.userId}, total strokes: ${updatedStrokes.length}`
+      );
+      this.drawingStrokesSubject.next(updatedStrokes);
     });
 
     this.socket.on('drawing-strokes', (strokes: DrawingStroke[]) => {

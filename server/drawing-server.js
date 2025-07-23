@@ -62,7 +62,9 @@ io.on("connection", (socket) => {
     // Broadcast to all other clients
     socket.broadcast.emit("drawing-stroke", stroke);
 
-    console.log(`Drawing stroke from ${stroke.userId}`);
+    console.log(
+      `Drawing stroke from ${stroke.userId}, total strokes: ${drawingStrokes.length}`
+    );
   });
 
   // Handle canvas clear
