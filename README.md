@@ -1,4 +1,4 @@
-# Professional Portfolio - John Doe
+# Personal Portfolio - Sumit
 
 A modern, minimalist portfolio website inspired by Anthony Fu's design aesthetic, built with Angular 18. Features a sleek dark theme, smooth animations, and a clean, professional layout.
 
@@ -174,4 +174,3 @@ For support or questions, please open an issue in the repository.
 
 ---
 
-**Built with ❤️ using Angular 18, inspired by Anthony Fu's design philosophy**
