@@ -1,0 +1,102 @@
+<section class="drawing-board-section" [class.active]="isActive">
+    <div class="drawing-board-content">
+        <div class="drawing-header">
+            <h2 class="section-title">Collaborative Drawing Board</h2>
+            <div class="connection-status" [class.connected]="isConnected">
+                <i class="fas" [class.fa-wifi]="isConnected" [class.fa-wifi-slash]="!isConnected"></i>
+                <span>{{ isConnected ? 'Connected' : 'Disconnected' }}</span>
+            </div>
+        </div>
+
+        <div class="drawing-container">
+            <!-- Drawing Tools -->
+            <div class="drawing-tools">
+                <div class="tool-group">
+                    <label>Brush Size</label>
+                    <input type="range" min="1" max="20" [(ngModel)]="brushSize" class="brush-slider">
+                    <span class="brush-size-display">{{ brushSize }}px</span>
+                </div>
+
+                <div class="tool-group">
+                    <label>Color</label>
+                    <div class="color-palette">
+                        <div class="color-option" *ngFor="let color of colors" [style.background-color]="color"
+                            [class.active]="selectedColor === color" (click)="selectColor(color)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-group">
+                    <button class="tool-btn" (click)="clearCanvas()" title="Clear Canvas">
+                        <i class="fas fa-trash"></i>
+                        Clear
+                    </button>
+                    <button class="tool-btn" (click)="downloadCanvas()" title="Download Drawing">
+                        <i class="fas fa-download"></i>
+                        Download
+                    </button>
+                </div>
+            </div>
+
+            <!-- Canvas Container -->
+            <div class="canvas-container">
+                <canvas #drawingCanvas (mousedown)="startDrawing($event)" (mousemove)="draw($event)"
+                    (mouseup)="stopDrawing()" (mouseleave)="stopDrawing()" (touchstart)="startDrawingTouch($event)"
+                    (touchmove)="drawTouch($event)" (touchend)="stopDrawing()">
+                </canvas>
+
+                <!-- Drawing Instructions -->
+                <div class="drawing-instructions" *ngIf="!hasDrawn">
+                    <i class="fas fa-paint-brush"></i>
+                    <p>Start drawing to collaborate with others!</p>
+                </div>
+            </div>
+
+            <!-- Users Panel -->
+            <div class="users-panel">
+                <h3>Active Users ({{ currentUsers.length }})</h3>
+                <div class="users-list">
+                    <div class="user-item" *ngFor="let user of currentUsers">
+                        <div class="user-avatar" [style.background-color]="user.color">
+                            {{ user.name.charAt(0).toUpperCase() }}
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name">{{ user.name }}</span>
+                            <span class="user-status" [class.drawing]="user.isDrawing">
+                                {{ user.isDrawing ? 'Drawing...' : 'Idle' }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connection Modal -->
+        <div class="connection-modal" *ngIf="!isConnected && !isConnecting">
+            <div class="modal-content">
+                <h3>Join Drawing Session</h3>
+                <p>Enter your name to start collaborating with others</p>
+
+                <div class="form-group">
+                    <label for="userName">Your Name</label>
+                    <input type="text" id="userName" [(ngModel)]="userName" placeholder="Enter your name"
+                        maxlength="20">
+                </div>
+
+                <div class="form-group">
+                    <label>Your Color</label>
+                    <div class="color-palette">
+                        <div class="color-option" *ngFor="let color of colors" [style.background-color]="color"
+                            [class.active]="userColor === color" (click)="selectUserColor(color)">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" (click)="connectToDrawing()" [disabled]="!userName.trim()">
+                    <i class="fas fa-play"></i>
+                    Start Drawing
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

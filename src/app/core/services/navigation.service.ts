@@ -33,7 +33,7 @@ export class NavigationService {
   }
 
   nextSection(): void {
-    if (this.currentSection < 3) {
+    if (this.currentSection < 4) {
       this.setScrolling(true);
       this.currentSectionSubject.next(this.currentSection + 1);
       this.resetScrollingAfterDelay();
@@ -71,7 +71,7 @@ export class NavigationService {
   }
 
   getSectionTitle(index: number): string {
-    const titles = ['Home', 'About', 'Projects', 'Contact'];
+    const titles = ['Home', 'About', 'Projects', 'Contact', 'Drawing Board'];
     return titles[index] || '';
   }
 }

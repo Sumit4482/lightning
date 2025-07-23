@@ -11,7 +11,7 @@ import { NavigationService } from '../../../core/services/navigation.service';
 })
 export class NavigationDotsComponent implements OnInit {
   currentSection = 0;
-  sections = [0, 1, 2, 3];
+  sections = [0, 1, 2, 3, 4];
   isMobile = false;
 
   constructor(private navigationService: NavigationService) {
