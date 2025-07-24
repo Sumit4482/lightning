@@ -1,0 +1,169 @@
+<section class="particle-playground-section" [class.active]="isActive">
+    <div class="particle-playground-content">
+        <div class="playground-header">
+            <h2 class="section-title">Interactive Particle Playground</h2>
+            <div class="playground-controls">
+                <button class="control-btn" (click)="toggleAnimation()" [class.active]="isRunning">
+                    <i class="fas" [class.fa-play]="!isRunning" [class.fa-pause]="isRunning"></i>
+                    {{ isRunning ? 'Pause' : 'Play' }}
+                </button>
+                <button class="control-btn" (click)="clearParticles()">
+                    <i class="fas fa-trash"></i>
+                    Clear
+                </button>
+                <button class="control-btn" (click)="createRandomExplosion()">
+                    <i class="fas fa-bomb"></i>
+                    Explode
+                </button>
+            </div>
+        </div>
+
+        <div class="playground-container">
+            <!-- Particle Canvas -->
+            <div class="canvas-container">
+                <canvas #particleCanvas class="particle-canvas"></canvas>
+
+                <!-- Instructions -->
+                <div class="instructions" *ngIf="!isRunning">
+                    <i class="fas fa-magic"></i>
+                    <h3>Interactive Particle System</h3>
+                    <p>Click to create explosions • Drag to attract particles • Watch the magic happen!</p>
+                    <p>Use the controls to customize your experience</p>
+                </div>
+
+                <!-- Mouse interaction hint -->
+                <div class="mouse-hint" *ngIf="mouseInteraction && isRunning">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <span>Click & Drag to interact</span>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h3>Particle Settings</h3>
+
+                    <div class="control-group">
+                        <label>Particle Count</label>
+                        <input type="range" min="10" max="500" step="10" [(ngModel)]="particleCount"
+                            (input)="setParticleCount(+particleCount)" class="slider">
+                        <span class="value">{{ particleCount }}</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Speed</label>
+                        <input type="range" min="0.1" max="5" step="0.1" [(ngModel)]="speed" (input)="setSpeed(+speed)"
+                            class="slider">
+                        <span class="value">{{ speed }}x</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Size</label>
+                        <input type="range" min="0.1" max="3" step="0.1" [(ngModel)]="size" (input)="setSize(+size)"
+                            class="slider">
+                        <span class="value">{{ size }}x</span>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Visual Effects</h3>
+
+                    <div class="control-group">
+                        <label>Color Mode</label>
+                        <select [(ngModel)]="colorMode" (change)="setColorMode(colorMode)" class="select">
+                            <option value="rainbow">Rainbow</option>
+                            <option value="fire">Fire</option>
+                            <option value="ocean">Ocean</option>
+                            <option value="cosmic">Cosmic</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Particle Type</label>
+                        <select [(ngModel)]="particleType" (change)="setParticleType(particleType)" class="select">
+                            <option value="normal">Normal</option>
+                            <option value="fire">Fire</option>
+                            <option value="sparkle">Sparkle</option>
+                            <option value="nebula">Nebula</option>
+                            <option value="cosmic">Cosmic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Physics</h3>
+
+                    <div class="toggle-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" [(ngModel)]="gravityEnabled" (change)="toggleGravity()">
+                            <span class="toggle-slider"></span>
+                            Gravity
+                        </label>
+                    </div>
+
+                    <div class="toggle-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" [(ngModel)]="autoSpawn" (change)="toggleAutoSpawn()">
+                            <span class="toggle-slider"></span>
+                            Auto Spawn
+                        </label>
+                    </div>
+
+                    <div class="toggle-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" [(ngModel)]="mouseInteraction" (change)="toggleMouseInteraction()">
+                            <span class="toggle-slider"></span>
+                            Mouse Interaction
+                        </label>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Statistics</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Particles</span>
+                            <span class="stat-value">{{ getParticleStats().total }}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Alive</span>
+                            <span class="stat-value">{{ getParticleStats().alive }}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Max Count</span>
+                            <span class="stat-value">{{ maxParticles }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h3>Quick Actions</h3>
+            <div class="action-buttons">
+                <button class="action-btn rainbow" (click)="setColorMode('rainbow')">
+                    <i class="fas fa-palette"></i>
+                    Rainbow
+                </button>
+                <button class="action-btn fire" (click)="setColorMode('fire')">
+                    <i class="fas fa-fire"></i>
+                    Fire
+                </button>
+                <button class="action-btn ocean" (click)="setColorMode('ocean')">
+                    <i class="fas fa-water"></i>
+                    Ocean
+                </button>
+                <button class="action-btn cosmic" (click)="setColorMode('cosmic')">
+                    <i class="fas fa-star"></i>
+                    Cosmic
+                </button>
+                <button class="action-btn explosion" (click)="createRandomExplosion()">
+                    <i class="fas fa-bomb"></i>
+                    Explosion
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

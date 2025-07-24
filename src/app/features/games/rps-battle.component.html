@@ -1,0 +1,132 @@
+<section class="rps-battle-section" [class.active]="isActive">
+    <div class="rps-battle-content">
+        <div class="game-header">
+            <h2 class="section-title">Rock Paper Scissors Battle Arena</h2>
+            <div class="game-controls">
+                <button class="control-btn" (click)="toggleGame()" [class.active]="isGameRunning">
+                    <i class="fas" [class.fa-play]="!isGameRunning" [class.fa-pause]="isGameRunning"></i>
+                    {{ isGameRunning ? 'Pause' : 'Start' }}
+                </button>
+                <button class="control-btn" (click)="resetGame()">
+                    <i class="fas fa-redo"></i>
+                    Reset
+                </button>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <!-- Game Canvas -->
+            <div class="canvas-container">
+                <canvas #gameCanvas class="game-canvas"></canvas>
+
+                <!-- Game Instructions -->
+                <div class="game-instructions" *ngIf="!isGameRunning">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Watch the Battle!</h3>
+                    <p>Rock crushes Scissors, Scissors cut Paper, Paper covers Rock</p>
+                    <p>Units evolve and grow stronger with each victory</p>
+                </div>
+            </div>
+
+            <!-- Game Stats Panel -->
+            <div class="stats-panel">
+                <div class="stats-header">
+                    <h3>Battle Statistics</h3>
+                    <div class="game-time">
+                        <i class="fas fa-clock"></i>
+                        {{ (gameStats.gameTime / 1000) | number:'1.0-0' }}s
+                    </div>
+                </div>
+
+                <div class="stats-content">
+                    <div class="stat-group">
+                        <h4>Total Battles</h4>
+                        <div class="stat-value">{{ gameStats.totalBattles }}</div>
+                    </div>
+
+                    <div class="stat-group">
+                        <h4>Victories</h4>
+                        <div class="victory-stats">
+                            <div class="victory-item rock">
+                                <span class="victory-icon">🪨</span>
+                                <span class="victory-count">{{ gameStats.rockWins }}</span>
+                            </div>
+                            <div class="victory-item paper">
+                                <span class="victory-icon">📄</span>
+                                <span class="victory-count">{{ gameStats.paperWins }}</span>
+                            </div>
+                            <div class="victory-item scissors">
+                                <span class="victory-icon">✂️</span>
+                                <span class="victory-count">{{ gameStats.scissorsWins }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-group">
+                        <h4>Current Units</h4>
+                        <div class="unit-counts">
+                            <div class="unit-count rock">
+                                <span class="unit-icon">🪨</span>
+                                <span class="unit-number">{{ getUnitCounts().rock }}</span>
+                            </div>
+                            <div class="unit-count paper">
+                                <span class="unit-icon">📄</span>
+                                <span class="unit-number">{{ getUnitCounts().paper }}</span>
+                            </div>
+                            <div class="unit-count scissors">
+                                <span class="unit-icon">✂️</span>
+                                <span class="unit-number">{{ getUnitCounts().scissors }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-group">
+                        <h4>Max Level</h4>
+                        <div class="stat-value level">{{ gameStats.maxLevel }}</div>
+                    </div>
+                </div>
+
+                <!-- Game Settings -->
+                <div class="game-settings">
+                    <h4>Settings</h4>
+
+                    <div class="setting-group">
+                        <label>Game Speed</label>
+                        <input type="range" min="0.1" max="5" step="0.1" [(ngModel)]="gameSpeed"
+                            (input)="setGameSpeed(+gameSpeed)" class="speed-slider">
+                        <span class="setting-value">{{ gameSpeed }}x</span>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Unit Count</label>
+                        <input type="range" min="10" max="200" step="10" [(ngModel)]="unitCount"
+                            (input)="setUnitCount(+unitCount)" class="count-slider">
+                        <span class="setting-value">{{ unitCount }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Battle History -->
+        <div class="battle-history">
+            <h3>Recent Battles</h3>
+            <div class="history-list">
+                <div class="history-item" *ngFor="let battle of battleHistory.slice(-5).reverse()">
+                    <div class="battle-result">
+                        <span class="winner-type" [class]="battle.winner.type">
+                            {{ battle.winner.type.toUpperCase() }}
+                        </span>
+                        <span class="battle-arrow">→</span>
+                        <span class="loser-type" [class]="battle.loser.type">
+                            {{ battle.loser.type.toUpperCase() }}
+                        </span>
+                    </div>
+                    <div class="battle-info">
+                        <span class="winner-level">Lv.{{ battle.winner.level }}</span>
+                        <span class="battle-time">{{ (gameStats.gameTime / 1000) | number:'1.0-0' }}s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -16,6 +16,7 @@ import { HeroSectionComponent } from './features/hero/hero-section.component';
 import { AboutSectionComponent } from './features/about/about-section.component';
 import { ProjectsSectionComponent } from './features/projects/projects-section.component';
 import { ContactSectionComponent } from './features/contact/contact-section.component';
+import { ParticlePlaygroundComponent } from './features/games/particle-playground.component';
 // import { DrawingBoardComponent } from './features/drawing-board/drawing-board.component';
 
 @Component({
@@ -31,6 +32,7 @@ import { ContactSectionComponent } from './features/contact/contact-section.comp
     AboutSectionComponent,
     ProjectsSectionComponent,
     ContactSectionComponent,
+    ParticlePlaygroundComponent,
     // DrawingBoardComponent,
   ],
   templateUrl: './app.component.html',
