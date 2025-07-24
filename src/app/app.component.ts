@@ -16,7 +16,7 @@ import { HeroSectionComponent } from './features/hero/hero-section.component';
 import { AboutSectionComponent } from './features/about/about-section.component';
 import { ProjectsSectionComponent } from './features/projects/projects-section.component';
 import { ContactSectionComponent } from './features/contact/contact-section.component';
-import { DrawingBoardComponent } from './features/drawing-board/drawing-board.component';
+// import { DrawingBoardComponent } from './features/drawing-board/drawing-board.component';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +31,7 @@ import { DrawingBoardComponent } from './features/drawing-board/drawing-board.co
     AboutSectionComponent,
     ProjectsSectionComponent,
     ContactSectionComponent,
-    DrawingBoardComponent,
+    // DrawingBoardComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
