@@ -16,7 +16,7 @@ import { HeroSectionComponent } from './features/hero/hero-section.component';
 import { AboutSectionComponent } from './features/about/about-section.component';
 import { ProjectsSectionComponent } from './features/projects/projects-section.component';
 import { ContactSectionComponent } from './features/contact/contact-section.component';
-import { ParticlePlaygroundComponent } from './features/games/particle-playground.component';
+// import { PirateNavigationComponent } from './features/pirate-navigation/pirate-navigation.component';
 // import { DrawingBoardComponent } from './features/drawing-board/drawing-board.component';
 
 @Component({
@@ -32,7 +32,7 @@ import { ParticlePlaygroundComponent } from './features/games/particle-playgroun
     AboutSectionComponent,
     ProjectsSectionComponent,
     ContactSectionComponent,
-    ParticlePlaygroundComponent,
+    // PirateNavigationComponent,
     // DrawingBoardComponent,
   ],
   templateUrl: './app.component.html',
