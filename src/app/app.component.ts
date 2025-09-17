@@ -16,8 +16,6 @@ import { HeroSectionComponent } from './features/hero/hero-section.component';
 import { AboutSectionComponent } from './features/about/about-section.component';
 import { ProjectsSectionComponent } from './features/projects/projects-section.component';
 import { ContactSectionComponent } from './features/contact/contact-section.component';
-// import { PirateNavigationComponent } from './features/pirate-navigation/pirate-navigation.component';
-// import { DrawingBoardComponent } from './features/drawing-board/drawing-board.component';
 
 @Component({
   selector: 'app-root',
@@ -32,8 +30,6 @@ import { ContactSectionComponent } from './features/contact/contact-section.comp
     AboutSectionComponent,
     ProjectsSectionComponent,
     ContactSectionComponent,
-    // PirateNavigationComponent,
-    // DrawingBoardComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
