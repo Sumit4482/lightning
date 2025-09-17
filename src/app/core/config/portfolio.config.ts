@@ -106,11 +106,11 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
 
   projects: [
     {
-      title: 'E-Commerce Platform',
+      title: 'QuizMaster-Pro',
       description:
-        'A full-stack e-commerce solution with real-time inventory management and payment processing.',
-      technologies: ['Angular', 'Node.js', 'MongoDB', 'Stripe'],
-      liveUrl: 'https://example-ecommerce.com',
+        'QuizMaster Pro is a real-time, AI-powered multiplayer quiz platform with scalable microservices architecture and sub-100ms latency for seamless gameplay.',
+      technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Redis','Socket.io','Docker'],
+      // liveUrl: 'https://example-ecommerce.com',
       sourceUrl: 'https://github.com/johndoe/ecommerce-platform',
     },
     {
