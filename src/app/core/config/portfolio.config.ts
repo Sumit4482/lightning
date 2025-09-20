@@ -66,7 +66,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     description:
       'I build web apps that (mostly) work. Love clean code, good design, and a strong cup of chai ☕ ',
     email: 'sbanwakde4482@gmail.com',
-    resumeUrl: 'https://drive.google.com/your-resume-link-here',
+    resumeUrl: 'https://drive.google.com/file/d/1THltfJkh9BLz5MGMyZ3Dq9poF1PBSPIg/view?usp=sharing',
   },
 
   social: {
@@ -84,7 +84,6 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     { name: 'JavaScript', level: 95 },
     { name: 'HTML/CSS', level: 95 },
     { name: 'C++', level: 95 },
-    { name: 'Bash', level: 95 },
     { name: 'Angular', level: 95 },
     { name: 'Node.js', level: 95 },
     { name: 'Express', level: 95 },
@@ -98,10 +97,9 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     { name: 'AWS', level: 95 },
     { name: 'Docker', level: 95 },
     { name: 'Kubernetes', level: 95 },
-    { name: 'Grafana', level: 95 },
-    { name: 'Prometheus', level: 95 },
     { name: 'Cursor', level: 95 },
     { name: 'Jenkins', level: 95 },
+    { name: 'Flutter', level: 95 },
   ],
 
   projects: [
@@ -109,25 +107,23 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
       title: 'QuizMaster-Pro',
       description:
         'QuizMaster Pro is a real-time, AI-powered multiplayer quiz platform with scalable microservices architecture and sub-100ms latency for seamless gameplay.',
-      technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Redis','Socket.io','Docker'],
+      technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Redis','Socket.io','Docker','GenAI'],
       // liveUrl: 'https://example-ecommerce.com',
       sourceUrl: 'https://github.com/johndoe/ecommerce-platform',
     },
     {
-      title: 'Task Management App',
+      title: 'EchoPrompt AI-Powered Prompt Builder',
       description:
-        'Collaborative project management tool with real-time updates and team collaboration features.',
-      technologies: ['React', 'Firebase', 'TypeScript', 'Material-UI'],
-      liveUrl: 'https://taskmanager.example.com',
-      sourceUrl: 'https://github.com/johndoe/task-manager',
+        'A comprehensive, full-stack application for creating, managing, and sharing AI prompts with advanced features and a beautiful user interface.',
+      technologies: ['React', 'TypeScript', 'Node.js','Express','MongoDB','GenAI'],
+      sourceUrl: 'https://github.com/Sumit4482/emini-prompt-guide',
     },
     {
-      title: 'Portfolio Website',
+      title: 'PageTurn',
       description:
-        'Modern, responsive portfolio website with light/dark theme toggle and smooth animations.',
-      technologies: ['Angular', 'SCSS', 'TypeScript', 'GSAP'],
-      liveUrl: 'https://johndoe.dev',
-      sourceUrl: 'https://github.com/johndoe/portfolio',
+        'Your go-to destination for discovering, sharing, and discussing books. Explore diverse genres, read reviews. Dive into a world of literature and ignite your passion for reading with Pageturn.',
+      technologies: ['Angular', 'SCSS', 'TypeScript','JavaScript','MongoDB'],
+      sourceUrl: 'https://github.com/Sumit4482/PageTurn',
     },
   ],
 
