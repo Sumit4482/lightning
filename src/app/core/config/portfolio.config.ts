@@ -109,14 +109,14 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
         'QuizMaster Pro is a real-time, AI-powered multiplayer quiz platform with scalable microservices architecture and sub-100ms latency for seamless gameplay.',
       technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Redis','Socket.io','Docker','GenAI'],
       // liveUrl: 'https://example-ecommerce.com',
-      sourceUrl: 'https://github.com/johndoe/ecommerce-platform',
+      sourceUrl: 'https://github.com/Sumit4482/QuizMaster-Pro',
     },
     {
       title: 'EchoPrompt AI-Powered Prompt Builder',
       description:
         'A comprehensive, full-stack application for creating, managing, and sharing AI prompts with advanced features and a beautiful user interface.',
       technologies: ['React', 'TypeScript', 'Node.js','Express','MongoDB','GenAI'],
-      sourceUrl: 'https://github.com/Sumit4482/emini-prompt-guide',
+      sourceUrl: 'https://github.com/Sumit4482/EchoPrompt',
     },
     {
       title: 'PageTurn',
