@@ -66,7 +66,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     description:
       'I build web apps that (mostly) work. Love clean code, good design, and a strong cup of chai ☕ ',
     email: 'sbanwakde4482@gmail.com',
-    resumeUrl: 'https://drive.google.com/file/d/1WgA3sKR69afDQVJh9hiKAhGJP6extpFU/view?usp=sharing',
+    resumeUrl: 'https://drive.google.com/file/d/1DetEc0OuUjWvN89M4mlee2cjmTIElrrU/view?usp=sharing',
   },
 
   social: {
@@ -75,31 +75,28 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     twitter: 'https://x.com/incompleteDSA',
   },
 
-  // Languages: JavaScript, TypeScript, HTML/CSS, C++, Bash
-  // Frameworks and Libraries: Angular, Node.js, Express, GraphQL, Jasmine
-  // Databases and Messaging: MongoDB, MySQL, Redis, RabbitMQ
-  // Developer Tools: Git, Cursor, AWS (EC2, S3), Docker, Kubernetes, Grafana, Prometheus
+  // Aligned with resume: Languages, Backend, Frontend, Databases, DevOps & Cloud, Messaging, Testing
   skills: [
-    { name: 'TypeScript', level: 95 },
     { name: 'JavaScript', level: 95 },
-    { name: 'HTML/CSS', level: 95 },
+    { name: 'TypeScript', level: 95 },
     { name: 'C++', level: 95 },
-    { name: 'Angular', level: 95 },
+    { name: 'Bash', level: 95 },
     { name: 'Node.js', level: 95 },
     { name: 'Express', level: 95 },
     { name: 'GraphQL', level: 95 },
-    { name: 'Jasmine', level: 95 },
+    { name: 'REST APIs', level: 95 },
+    { name: 'Microservices', level: 95 },
+    { name: 'Distributed Systems', level: 95 },
+    { name: 'Angular', level: 95 },
     { name: 'MongoDB', level: 95 },
-    { name: 'MySQL', level: 95 },
+    { name: 'PostgreSQL', level: 95 },
     { name: 'Redis', level: 95 },
-    { name: 'RabbitMQ', level: 95 },
-    { name: 'Git', level: 95 },
-    { name: 'AWS', level: 95 },
     { name: 'Docker', level: 95 },
     { name: 'Kubernetes', level: 95 },
-    { name: 'Cursor', level: 95 },
-    { name: 'Jenkins', level: 95 },
-    { name: 'Flutter', level: 95 },
+    { name: 'AWS', level: 95 },
+    { name: 'CI/CD', level: 95 },
+    { name: 'RabbitMQ', level: 95 },
+    { name: 'Unit & Integration Testing', level: 95 },
   ],
 
   projects: [
