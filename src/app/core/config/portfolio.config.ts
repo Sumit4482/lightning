@@ -66,7 +66,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     description:
       'I build web apps that (mostly) work. Love clean code, good design, and a strong cup of chai ☕ ',
     email: 'sbanwakde4482@gmail.com',
-    resumeUrl: 'https://drive.google.com/file/d/1DetEc0OuUjWvN89M4mlee2cjmTIElrrU/view?usp=sharing',
+    resumeUrl: 'https://drive.google.com/file/d/1Ow_UKhXDLPjPTehytzoNSdijcSBce82s/view?usp=sharing',
   },
 
   social: {
