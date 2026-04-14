@@ -53,6 +53,10 @@ export class DataService {
     return this.config.theme;
   }
 
+  get currentActivity() {
+    return this.config.currentActivity;
+  }
+
   getSkills(): Skill[] {
     return this.skills;
   }

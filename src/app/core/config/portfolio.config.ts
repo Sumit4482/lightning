@@ -55,6 +55,13 @@ export interface PortfolioConfig {
   theme: {
     defaultColorScheme: string; // Name of the default color scheme
   };
+
+  /** Rotating “what I’m up to” line in the hero (set lines: [] to hide) */
+  currentActivity: {
+    label: string;
+    lines: string[];
+    intervalMs: number;
+  };
 }
 
 // Default Configuration - Users can modify this
@@ -152,5 +159,13 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
 
   theme: {
     defaultColorScheme: 'Emerald',
+  },
+
+  currentActivity: {
+    label: 'Right now',
+    lines: [
+      'Building Eevee',
+    ],
+    intervalMs: 3800,
   },
 };

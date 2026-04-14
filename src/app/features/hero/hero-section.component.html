@@ -6,6 +6,18 @@
                 <span class="name">{{personalInfo.name}}</span>
             </h1>
             <p class="hero-subtitle">{{personalInfo.title}}</p>
+            <p
+                class="hero-presence"
+                *ngIf="currentActivity?.lines?.length"
+                role="status"
+                aria-live="polite"
+            >
+                <span class="presence-pulse" aria-hidden="true"></span>
+                <span class="presence-label">{{ currentActivity.label }}</span>
+                <span class="presence-line-wrap" [class.visible]="lineVisible">
+                    <span class="presence-line">{{ presenceLine }}</span>
+                </span>
+            </p>
             <p class="hero-description">
                 {{personalInfo.description}}
             </p>
