@@ -1,0 +1,250 @@
+{
+  "2026-04-08": {
+    "sentence": {
+      "id": "sentence_20260408",
+      "telugu": "నమస్కారం, మీరు ఎలా ఉన్నారు?",
+      "pronunciation": "Namaskāram, mīru ela unnāru?",
+      "hindi": "नमस्ते, आप कैसे हैं?",
+      "english": "Hello, how are you?",
+      "hinglish": "Namaste, kaise ho?",
+      "audio": "sentence_20260408"
+    },
+    "words": [
+      {
+        "id": "word_20260408_1",
+        "telugu": "నమస్కారం",
+        "pronunciation": "Namaskāram",
+        "hindi": "नमस्ते",
+        "english": "Hello / Greetings",
+        "hinglish": "Namaste",
+        "audio": "word_20260408_1"
+      },
+      {
+        "id": "word_20260408_2",
+        "telugu": "నీళ్ళు",
+        "pronunciation": "Nīḷḷu",
+        "hindi": "पानी",
+        "english": "Water",
+        "hinglish": "Paani",
+        "audio": "word_20260408_2"
+      }
+    ]
+  },
+  "2026-04-09": {
+    "sentence": {
+      "id": "sentence_20260409",
+      "telugu": "నాకు తెలుగు నేర్చుకోవాలి.",
+      "pronunciation": "Nāku Telugu nērchukōvāli.",
+      "hindi": "मुझे तेलुगु सीखनी है।",
+      "english": "I want to learn Telugu.",
+      "hinglish": "Mujhe Telugu seekhni hai.",
+      "audio": "sentence_20260409"
+    },
+    "words": [
+      {
+        "id": "word_20260409_1",
+        "telugu": "నేర్చుకోవడం",
+        "pronunciation": "Nērchukoṛaṁ",
+        "hindi": "सीखना",
+        "english": "Learning",
+        "hinglish": "Seekhna",
+        "audio": "word_20260409_1"
+      },
+      {
+        "id": "word_20260409_2",
+        "telugu": "భాష",
+        "pronunciation": "Bhāṣa",
+        "hindi": "भाषा",
+        "english": "Language",
+        "hinglish": "Bhasha",
+        "audio": "word_20260409_2"
+      }
+    ]
+  },
+  "2026-04-10": {
+    "sentence": {
+      "id": "sentence_20260410",
+      "telugu": "ఈరోజు వాతావరణం చాలా బాగుంది.",
+      "pronunciation": "Īrōju vātāvaraṇaṁ chālā bāgundi.",
+      "hindi": "आज मौसम बहुत अच्छा है।",
+      "english": "The weather is very nice today.",
+      "hinglish": "Aaj mausam kaafi achha hai.",
+      "audio": "sentence_20260410"
+    },
+    "words": [
+      {
+        "id": "word_20260410_1",
+        "telugu": "ఎండ",
+        "pronunciation": "Eṇḍa",
+        "hindi": "धूप",
+        "english": "Sunshine / Heat",
+        "hinglish": "Dhoop",
+        "audio": "word_20260410_1"
+      },
+      {
+        "id": "word_20260410_2",
+        "telugu": "వర్షం",
+        "pronunciation": "Varṣaṁ",
+        "hindi": "बारिश",
+        "english": "Rain",
+        "hinglish": "Baarish",
+        "audio": "word_20260410_2"
+      }
+    ]
+  },
+  "2026-04-11": {
+    "sentence": {
+      "id": "sentence_20260411",
+      "telugu": "నేను అన్నం తింటాను.",
+      "pronunciation": "Nēnu annaṁ tiṇṭānu.",
+      "hindi": "मैं चावल खाता/खाती हूँ।",
+      "english": "I eat rice / a meal.",
+      "hinglish": "Main khana khata/khati hoon.",
+      "audio": "sentence_20260411"
+    },
+    "words": [
+      {
+        "id": "word_20260411_1",
+        "telugu": "అన్నం",
+        "pronunciation": "Annaṁ",
+        "hindi": "चावल",
+        "english": "Cooked rice",
+        "hinglish": "Chawal",
+        "audio": "word_20260411_1"
+      },
+      {
+        "id": "word_20260411_2",
+        "telugu": "కూర",
+        "pronunciation": "Kūra",
+        "hindi": "सब्ज़ी / करी",
+        "english": "Curry / side dish",
+        "hinglish": "Sabzi",
+        "audio": "word_20260411_2"
+      }
+    ]
+  },
+  "2026-04-12": {
+    "sentence": {
+      "id": "sentence_20260412",
+      "telugu": "మీ పేరు ఏమిటి?",
+      "pronunciation": "Mī pēru ēmiṭi?",
+      "hindi": "आपका नाम क्या है?",
+      "english": "What is your name?",
+      "hinglish": "Aapka naam kya hai?",
+      "audio": "sentence_20260412"
+    },
+    "words": [
+      {
+        "id": "word_20260412_1",
+        "telugu": "పేరు",
+        "pronunciation": "Pēru",
+        "hindi": "नाम",
+        "english": "Name",
+        "hinglish": "Naam",
+        "audio": "word_20260412_1"
+      },
+      {
+        "id": "word_20260412_2",
+        "telugu": "ధన్యవాదాలు",
+        "pronunciation": "Dhanyavādālu",
+        "hindi": "धन्यवाद",
+        "english": "Thank you",
+        "hinglish": "Shukriya / Thanks",
+        "audio": "word_20260412_2"
+      }
+    ]
+  },
+  "2026-04-13": {
+    "sentence": {
+      "id": "sentence_20260413",
+      "telugu": "నేను ఇప్పుడు ఆఫీసుకు వెళ్తున్నాను.",
+      "pronunciation": "Nēnu ippuḍu āphīsuku veḷtunnānu.",
+      "hindi": "मैं अभी ऑफिस जा रहा/रही हूँ।",
+      "english": "I am going to the office now.",
+      "hinglish": "Main abhi office ja raha/rahi hoon.",
+      "audio": "sentence_20260413"
+    },
+    "words": [
+      {
+        "id": "word_20260413_1",
+        "telugu": "ఆఫీసు",
+        "pronunciation": "Āphīsu",
+        "hindi": "दफ़्तर",
+        "english": "Office",
+        "hinglish": "Office",
+        "audio": "word_20260413_1"
+      },
+      {
+        "id": "word_20260413_2",
+        "telugu": "ఇల్లు",
+        "pronunciation": "Illu",
+        "hindi": "घर",
+        "english": "House / home",
+        "hinglish": "Ghar",
+        "audio": "word_20260413_2"
+      }
+    ]
+  },
+  "2026-04-14": {
+    "sentence": {
+      "id": "sentence_20260414",
+      "telugu": "నాకు కాఫీ ఇష్టం.",
+      "pronunciation": "Nāku kāphī iṣṭaṁ.",
+      "hindi": "मुझे कॉफ़ी पसंद है।",
+      "english": "I like coffee.",
+      "hinglish": "Mujhe coffee pasand hai.",
+      "audio": "sentence_20260414"
+    },
+    "words": [
+      {
+        "id": "word_20260414_1",
+        "telugu": "కాఫీ",
+        "pronunciation": "Kāphī",
+        "hindi": "कॉफ़ी",
+        "english": "Coffee",
+        "hinglish": "Coffee",
+        "audio": "word_20260414_1"
+      },
+      {
+        "id": "word_20260414_2",
+        "telugu": "చక్కెర",
+        "pronunciation": "Chakkera",
+        "hindi": "चीनी",
+        "english": "Sugar",
+        "hinglish": "Cheeni",
+        "audio": "word_20260414_2"
+      }
+    ]
+  },
+  "2026-04-15": {
+    "sentence": {
+      "id": "sentence_20260415",
+      "telugu": "మనం కలిసి తెలుగు మెలుగుద్దాం.",
+      "pronunciation": "Manaṁ kalisi Telugu meluguddāṁ.",
+      "hindi": "आओ मिलकर तेलुगु सीखें।",
+      "english": "Let’s learn Telugu together.",
+      "hinglish": "Chalo saath me Telugu seekhte hain.",
+      "audio": "sentence_20260415"
+    },
+    "words": [
+      {
+        "id": "word_20260415_1",
+        "telugu": "కలిసి",
+        "pronunciation": "Kalisi",
+        "hindi": "साथ मिलकर",
+        "english": "Together",
+        "hinglish": "Saath me",
+        "audio": "word_20260415_1"
+      },
+      {
+        "id": "word_20260415_2",
+        "telugu": "మెలుగుద్దాం",
+        "pronunciation": "Meluguddāṁ",
+        "hindi": "सीख लें / चमकाएँ",
+        "english": "Let’s learn / brighten (here: learn well)",
+        "hinglish": "Seekh lete hain",
+        "audio": "word_20260415_2"
+      }
+    ]
+  }
+}

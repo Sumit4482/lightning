@@ -1,0 +1,61 @@
+Running `(cd /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/; TMPDIR=/var/folders/96/6mj8qdv142zdhg2hrt173bhw0000gn/T/ PATH=/Users/igdclt0379/development/flutter/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Users/igdclt0379/development/flutter/bin HOME=/Users/igdclt0379 /Users/igdclt0379/development/flutter/bin/cache/dart-sdk/bin/dart --packages=/Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/package_config.json /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/objective_c/7ad245dadc/hook.dill --config=/Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/objective_c/7ad245dadc/input.json )`.
+INFO: 2026-04-15 03:06:49.634405: Running `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version`.
+
+INFO: 2026-04-15 03:06:49.752381: Running `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version`.
+
+INFO: 2026-04-15 03:06:49.767038: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -c /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/include/dart_api_dl.c -fpic -I src -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/include/dart_api_dl.c.o
+
+INFO: 2026-04-15 03:06:49.767526: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -c /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/objective_c.c -fpic -I src -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.c.o
+
+INFO: 2026-04-15 03:06:49.767688: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -c /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/test/util.c -fpic -I src -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/test/util.c.o
+
+INFO: 2026-04-15 03:06:49.768379: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/objective_c_bindings_generated.m -fpic -I src -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-04-15 03:06:49.767913: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/objective_c.m -fpic -I src -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.m.o
+
+INFO: 2026-04-15 03:06:49.768219: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/protocol.m -fpic -I src -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/protocol.m.o
+
+INFO: 2026-04-15 03:06:49.768017: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/observer.m -fpic -I src -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/observer.m.o
+
+INFO: 2026-04-15 03:06:49.768118: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/ns_number.m -fpic -I src -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/ns_number.m.o
+
+INFO: 2026-04-15 03:06:49.767805: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/igdclt0379/.pub-cache/hosted/pub.dev/objective_c-9.3.0/src/input_stream_adapter.m -fpic -I src -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/input_stream_adapter.m.o
+
+INFO: 2026-04-15 03:06:49.888340: 
+INFO: 2026-04-15 03:06:49.888461: 
+INFO: 2026-04-15 03:06:49.888493: Generated /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.c.o
+
+INFO: 2026-04-15 03:06:49.888741: 
+INFO: 2026-04-15 03:06:49.888758: 
+INFO: 2026-04-15 03:06:49.888769: Generated /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/include/dart_api_dl.c.o
+
+INFO: 2026-04-15 03:06:49.903650: 
+INFO: 2026-04-15 03:06:49.903702: 
+INFO: 2026-04-15 03:06:49.903713: Generated /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/observer.m.o
+
+INFO: 2026-04-15 03:06:49.906973: 
+INFO: 2026-04-15 03:06:49.907016: 
+INFO: 2026-04-15 03:06:49.907028: Generated /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/protocol.m.o
+
+INFO: 2026-04-15 03:06:50.206244: 
+INFO: 2026-04-15 03:06:50.206289: 
+INFO: 2026-04-15 03:06:50.206300: Generated /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/ns_number.m.o
+
+INFO: 2026-04-15 03:06:50.213833: 
+INFO: 2026-04-15 03:06:50.213872: 
+INFO: 2026-04-15 03:06:50.213892: Generated /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.m.o
+
+INFO: 2026-04-15 03:06:50.216104: 
+INFO: 2026-04-15 03:06:50.216134: 
+INFO: 2026-04-15 03:06:50.216147: Generated /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/input_stream_adapter.m.o
+
+INFO: 2026-04-15 03:06:50.232357: 
+INFO: 2026-04-15 03:06:50.232389: 
+INFO: 2026-04-15 03:06:50.232399: Generated /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-04-15 03:06:50.232740: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -shared -Wl,-encryptable -undefined dynamic_lookup -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/include/dart_api_dl.c.o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.c.o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/test/util.c.o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/input_stream_adapter.m.o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.m.o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/observer.m.o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/ns_number.m.o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/protocol.m.o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c_bindings_generated.m.o -o /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/objective_c.dylib
+
+INFO: 2026-04-15 03:06:50.382284: 
+INFO: 2026-04-15 03:06:50.382360: 
+INFO: 2026-04-15 03:06:50.382373: Generated /Users/igdclt0379/Downloads/FlutterProjects/eevee/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/objective_c.dylib
+

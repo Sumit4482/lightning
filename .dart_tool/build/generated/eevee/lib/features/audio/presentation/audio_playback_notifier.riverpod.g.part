@@ -1,0 +1,23 @@
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+String _$audioPlaybackNotifierHash() =>
+    r'20498a3cae46d44cc8d2cf9297ae3418f1907add';
+
+/// See also [AudioPlaybackNotifier].
+@ProviderFor(AudioPlaybackNotifier)
+final audioPlaybackNotifierProvider =
+    NotifierProvider<AudioPlaybackNotifier, AudioUiSnapshot>.internal(
+  AudioPlaybackNotifier.new,
+  name: r'audioPlaybackNotifierProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$audioPlaybackNotifierHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$AudioPlaybackNotifier = Notifier<AudioUiSnapshot>;
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
