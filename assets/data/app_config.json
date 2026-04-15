@@ -1,0 +1,22 @@
+{
+  "contentAssetPath": "assets/data/content.json",
+  "audioAssetDirectory": "assets/audio",
+  "audioFilenameExtension": ".mp3",
+  "uiFeatureFlags": {
+    "historyEnabled": true
+  },
+  "cardContentRows": [
+    {
+      "fieldKey": "english",
+      "labelStringKey": "translationLabelEnglish"
+    },
+    {
+      "fieldKey": "hindi",
+      "labelStringKey": "translationLabelHindi"
+    },
+    {
+      "fieldKey": "hinglish",
+      "labelStringKey": "translationLabelHinglish"
+    }
+  ]
+}

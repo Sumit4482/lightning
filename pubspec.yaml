@@ -1,0 +1,81 @@
+name: eevee
+description: Eevee — daily Telugu micro-learning from English (Hindi & Hinglish).
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+  go_router: ^14.8.1
+  just_audio: ^0.9.46
+  audio_session: ^0.1.25
+  shared_preferences: ^2.3.3
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.15
+  riverpod_generator: ^2.6.4
+  custom_lint: ^0.7.3
+  riverpod_lint: ^2.6.4
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/branding/app_icon.png
+  adaptive_icon_background: "#0F1C14"
+  adaptive_icon_foreground: assets/branding/app_icon.png
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/content.json
+    - assets/data/app_config.json
+    - assets/branding/app_icon.png
+    - assets/audio/sentence_20260408.mp3
+    - assets/audio/word_20260408_1.mp3
+    - assets/audio/word_20260408_2.mp3
+    - assets/audio/sentence_20260409.mp3
+    - assets/audio/word_20260409_1.mp3
+    - assets/audio/word_20260409_2.mp3
+    - assets/audio/sentence_20260410.mp3
+    - assets/audio/word_20260410_1.mp3
+    - assets/audio/word_20260410_2.mp3
+    - assets/audio/sentence_20260411.mp3
+    - assets/audio/word_20260411_1.mp3
+    - assets/audio/word_20260411_2.mp3
+    - assets/audio/sentence_20260412.mp3
+    - assets/audio/word_20260412_1.mp3
+    - assets/audio/word_20260412_2.mp3
+    - assets/audio/sentence_20260413.mp3
+    - assets/audio/word_20260413_1.mp3
+    - assets/audio/word_20260413_2.mp3
+    - assets/audio/sentence_20260414.mp3
+    - assets/audio/word_20260414_1.mp3
+    - assets/audio/word_20260414_2.mp3
+    - assets/audio/sentence_20260415.mp3
+    - assets/audio/word_20260415_1.mp3
+    - assets/audio/word_20260415_2.mp3
+  fonts:
+    - family: Plus Jakarta Sans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-Variable.ttf
+    - family: Space Mono
+      fonts:
+        - asset: assets/fonts/SpaceMono-Regular.ttf
+        - asset: assets/fonts/SpaceMono-Italic.ttf
+          style: italic
+    - family: Noto Sans Telugu
+      fonts:
+        - asset: assets/fonts/NotoSansTelugu-Regular.ttf
+        - asset: assets/fonts/NotoSansTelugu-Bold.ttf
+          weight: 700
