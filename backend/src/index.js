@@ -10,13 +10,18 @@ const port = process.env.PORT || 3000;
 
 const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:4200')
   .split(',')
-  .map((origin) => origin.trim())
+  .map((origin) => origin.trim().replace(/\/$/, ''))
   .filter(Boolean);
 
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
+      const normalized = origin?.replace(/\/$/, '') ?? '';
+      if (
+        !origin ||
+        allowedOrigins.includes('*') ||
+        allowedOrigins.includes(normalized)
+      ) {
         callback(null, true);
         return;
       }

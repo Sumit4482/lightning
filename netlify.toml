@@ -8,10 +8,7 @@
   # Set API_URL in Netlify UI → Site settings → Environment variables
   # Example: https://lightning-api.onrender.com
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# SPA + /api proxy redirects: generated in frontend/public/_redirects at build (write-config.js)
 
 [[headers]]
   for = "/*"

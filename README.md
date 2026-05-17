@@ -39,5 +39,5 @@ LeetCode: one problem per line. Optional `Title | Easy` suffix for difficulty.
 
 ## Deployment
 
-- **Frontend (Netlify):** `base = frontend`, set `API_URL` to your Render URL
-- **Backend (Render):** uses `render.yaml`, set `CORS_ORIGIN` to your Netlify URL
+- **Frontend (Netlify):** set `API_URL` to your Render URL (build proxies `/api/*` there; no CORS needed)
+- **Backend (Render):** uses `render.yaml`; set `CORS_ORIGIN` to your Netlify URL if you call the API cross-origin (optional with Netlify proxy)
