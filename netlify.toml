@@ -1,9 +1,12 @@
 [build]
+  base = "frontend"
   publish = "dist/lightning/browser"
-  command = "npm run build:static"
+  command = "npm run build:netlify"
 
 [build.environment]
   NODE_VERSION = "18"
+  # Set API_URL in Netlify UI → Site settings → Environment variables
+  # Example: https://lightning-api.onrender.com
 
 [[redirects]]
   from = "/*"

@@ -1,0 +1,50 @@
+<div class="publish-page">
+  <div class="publish-card">
+    <header>
+      <h1>Publish daily log</h1>
+      <a routerLink="/">← Back to portfolio</a>
+    </header>
+
+    <p class="hint">
+      Secret page — not linked on the site. One row per date (upsert).
+      After save: <code>git add backend/data/daily-logs.json && git push</code> to deploy.
+    </p>
+
+    <label>
+      Admin secret
+      <input
+        type="password"
+        [(ngModel)]="adminSecret"
+        (ngModelChange)="onSecretChange()"
+        placeholder="Same as ADMIN_SECRET on Render"
+        autocomplete="off"
+      />
+    </label>
+
+    <label>
+      Date
+      <input type="date" [(ngModel)]="date" />
+    </label>
+
+    <label>
+      LeetCode (one problem per line)
+      <textarea
+        [(ngModel)]="leetcodeText"
+        rows="4"
+        placeholder="Two Sum&#10;Valid Parentheses | Medium"
+      ></textarea>
+    </label>
+
+    <label>Frontend skills (one per line) <textarea [(ngModel)]="frontendSkills" rows="3"></textarea></label>
+    <label>Backend skills (one per line) <textarea [(ngModel)]="backendSkills" rows="3"></textarea></label>
+    <label>DevOps skills (one per line) <textarea [(ngModel)]="devopsSkills" rows="3"></textarea></label>
+    <label>AI skills (one per line) <textarea [(ngModel)]="aiSkills" rows="3"></textarea></label>
+
+    <button type="button" class="btn-publish" (click)="submit()" [disabled]="saving">
+      {{ saving ? 'Publishing…' : 'Publish' }}
+    </button>
+
+    <p class="success" *ngIf="message">{{ message }}</p>
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </div>
+</div>

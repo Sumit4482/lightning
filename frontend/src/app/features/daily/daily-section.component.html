@@ -1,0 +1,171 @@
+<section class="daily-section" [class.active]="isActive">
+  <div class="daily-content">
+    <header class="daily-header">
+      <h2 class="section-title">Daily Progress</h2>
+      <p class="section-hint">Click a day on the calendar or in recent logs to see details</p>
+    </header>
+
+    <p class="daily-loading" *ngIf="loading">Loading…</p>
+    <p class="daily-error" *ngIf="error">{{ error }}</p>
+
+    <div class="daily-layout" *ngIf="!loading && !error">
+      <div class="panel panel-today">
+        <div class="panel-label-row">
+          <div class="panel-label">
+            <span class="label-dot"></span>
+            <ng-container *ngIf="isViewingToday">Today</ng-container>
+            <ng-container *ngIf="!isViewingToday">Day log</ng-container>
+            · {{ formatDate(displayDate) }}
+          </div>
+          <button type="button" class="btn-today" *ngIf="!isViewingToday" (click)="backToToday()">
+            ← Today
+          </button>
+        </div>
+
+        <div class="today-stats">
+          <div class="stat-chip">
+            <span class="stat-value">{{ lcCount }}</span>
+            <span class="stat-label">LeetCode</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-value">{{ skillsCount }}</span>
+            <span class="stat-label">Skills</span>
+          </div>
+        </div>
+
+        <ng-container *ngIf="displayEntry; else noEntryForDay">
+          <div class="subsection">
+            <h3 class="subsection-title"><i class="fas fa-code"></i> Problems solved</h3>
+            <div class="lc-chips" *ngIf="displayEntry.leetcode?.problems?.length; else noLc">
+              <div
+                class="lc-chip"
+                *ngFor="let p of displayEntry.leetcode.problems"
+                [ngClass]="difficultyClass(p.difficulty)"
+              >
+                <a *ngIf="p.url" class="lc-title" [href]="p.url" target="_blank" rel="noopener">{{ p.title }}</a>
+                <span *ngIf="!p.url" class="lc-title">{{ p.title }}</span>
+                <span class="diff" *ngIf="p.difficulty">{{ p.difficulty }}</span>
+              </div>
+            </div>
+            <ng-template #noLc>
+              <p class="empty-state">No LeetCode problems logged.</p>
+            </ng-template>
+          </div>
+
+          <div class="subsection" *ngIf="visibleSkillGroups.length">
+            <h3 class="subsection-title"><i class="fas fa-graduation-cap"></i> Skills learned</h3>
+            <div class="skills-list">
+              <div class="skill-row" *ngFor="let group of visibleSkillGroups">
+                <span class="skill-row-head">
+                  <i class="fas" [ngClass]="group.icon"></i>{{ group.label }}
+                </span>
+                <div class="skill-tags">
+                  <span class="skill-tag" *ngFor="let item of group.items">{{ item }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="empty-state" *ngIf="!visibleSkillGroups.length && !displayEntry.leetcode?.problems?.length">
+            Empty log for this day.
+          </p>
+        </ng-container>
+
+        <ng-template #noEntryForDay>
+          <p class="empty-state no-log">
+            <i class="fas fa-calendar-xmark"></i>
+            No log for this day — you missed it or haven't published yet.
+          </p>
+        </ng-template>
+      </div>
+
+      <div class="panel panel-consistency" *ngIf="history">
+        <div class="panel-label">
+          <span class="label-dot accent"></span>
+          Last 30 days
+        </div>
+
+        <div class="consistency-stats">
+          <div class="mini-stat logged">
+            <span class="mini-value">{{ loggedDaysCount }}</span>
+            <span class="mini-label">Logged</span>
+          </div>
+          <div class="mini-stat missed">
+            <span class="mini-value">{{ missedDaysCount }}</span>
+            <span class="mini-label">Missed</span>
+          </div>
+          <div class="mini-stat total">
+            <span class="mini-value">{{ history.calendar.length }}</span>
+            <span class="mini-label">Days</span>
+          </div>
+        </div>
+
+        <div class="heatmap">
+          <div class="heatmap-weekdays">
+            <span *ngFor="let w of weekdayLabels">{{ w }}</span>
+          </div>
+          <div class="heatmap-weeks">
+            <div class="heatmap-week" *ngFor="let week of calendarWeeks">
+              <button
+                type="button"
+                class="cal-cell-btn"
+                *ngFor="let day of week"
+                [ngClass]="calendarNgClass(day)"
+                [disabled]="day.status === 'future'"
+                (click)="selectDay(day)"
+                [attr.aria-label]="formatShortDate(day.date) + ', ' + day.status"
+                [title]="formatShortDate(day.date) + ' · ' + day.status"
+              >
+                <span class="cal-day-num">{{ day.date.slice(8) }}</span>
+              </button>
+            </div>
+          </div>
+          <div class="heatmap-legend">
+            <span><i class="leg logged"></i> LC done</span>
+            <span><i class="leg skills"></i> Skills only</span>
+            <span><i class="leg empty"></i> Blank log</span>
+            <span><i class="leg missed"></i> Missed</span>
+            <span><i class="leg future"></i> Upcoming</span>
+          </div>
+        </div>
+
+        <div class="missed-block" *ngIf="missedDaysCount">
+          <button type="button" class="missed-toggle" (click)="toggleMissedDetails()">
+            {{ missedDaysCount }} missed day{{ missedDaysCount === 1 ? '' : 's' }}
+            <i class="fas" [class.fa-chevron-down]="!showMissedDetails" [class.fa-chevron-up]="showMissedDetails"></i>
+          </button>
+          <div class="missed-chips" *ngIf="showMissedDetails">
+            <button
+              type="button"
+              class="missed-chip"
+              *ngFor="let d of history.missedDates"
+              (click)="selectDay({ date: d, status: 'missed', entry: null })"
+            >
+              {{ formatShortDate(d) }}
+            </button>
+          </div>
+        </div>
+        <p class="streak-note success" *ngIf="!missedDaysCount">Perfect run — no missed days in this window.</p>
+
+        <div class="subsection recent" *ngIf="recentEntries.length">
+          <h3 class="subsection-title"><i class="fas fa-clock-rotate-left"></i> All logs</h3>
+          <ul class="recent-list">
+            <li
+              *ngFor="let entry of recentEntries"
+              [class.selected]="entry.date === displayDate"
+              (click)="selectEntry(entry)"
+              (keydown.enter)="selectEntry(entry)"
+              tabindex="0"
+              role="button"
+            >
+              <span class="recent-date">{{ formatShortDate(entry.date) }}</span>
+              <span class="recent-meta">
+                <span class="meta-pill lc">{{ entry.leetcode.problems.length }} LC</span>
+                <span class="meta-pill skills">{{ entrySkillCount(entry) }} skills</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
