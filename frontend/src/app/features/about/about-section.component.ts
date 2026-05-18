@@ -22,7 +22,7 @@ export class AboutSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.navigationService.currentSection$.subscribe((section) => {
-      this.isActive = section === 2;
+      this.isActive = section === 1;
     });
 
     this.skills = this.dataService.getSkillsPreview();

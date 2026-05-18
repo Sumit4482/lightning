@@ -23,7 +23,7 @@ export class ContactSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.navigationService.currentSection$.subscribe((section) => {
-      this.isActive = section === 4;
+      this.isActive = section === 3;
     });
 
     this.personalInfo = this.dataService.personalInfo;

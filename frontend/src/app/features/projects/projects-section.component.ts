@@ -38,7 +38,7 @@ export class ProjectsSectionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.navigationService.currentSection$.subscribe((section) => {
-      this.isActive = section === 3;
+      this.isActive = section === 2;
     });
 
     this.navigationService.currentProjectIndex$.subscribe((index) => {
