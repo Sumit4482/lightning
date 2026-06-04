@@ -7,14 +7,9 @@ const router = Router();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const portfolioPath = join(__dirname, '../../data/portfolio.json');
 
-let cachedPortfolio = null;
-
 async function loadPortfolio() {
-  if (!cachedPortfolio) {
-    const raw = await readFile(portfolioPath, 'utf-8');
-    cachedPortfolio = JSON.parse(raw);
-  }
-  return cachedPortfolio;
+  const raw = await readFile(portfolioPath, 'utf-8');
+  return JSON.parse(raw);
 }
 
 router.get('/portfolio', async (_req, res) => {

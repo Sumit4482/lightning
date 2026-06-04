@@ -45,6 +45,7 @@
       "title": "EchoPrompt AI-Powered Prompt Builder",
       "description": "A comprehensive, full-stack application for creating, managing, and sharing AI prompts with advanced features and a beautiful user interface.",
       "technologies": ["React", "TypeScript", "Node.js", "Express", "MongoDB", "GenAI"],
+      "liveUrl": "https://echopromptt.netlify.app",
       "sourceUrl": "https://github.com/Sumit4482/EchoPrompt"
     },
     {
