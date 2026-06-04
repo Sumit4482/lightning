@@ -39,6 +39,10 @@ export class ProjectsSectionComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.navigationService.currentSection$.subscribe((section) => {
       this.isActive = section === 2;
+
+      if (section === 2 && isPlatformBrowser(this.platformId)) {
+        setTimeout(() => this.scrollToProject(this.currentProjectIndex), 0);
+      }
     });
 
     this.navigationService.currentProjectIndex$.subscribe((index) => {

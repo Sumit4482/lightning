@@ -74,11 +74,12 @@ export class HeroSectionComponent implements OnInit {
   }
 
   goToProjects(): void {
-    this.navigationService.goToSection(3);
+    this.navigationService.setCurrentProjectIndex(0);
+    this.navigationService.goToSection(2);
   }
 
   goToContact(): void {
-    this.navigationService.goToSection(4);
+    this.navigationService.goToSection(3);
   }
 
   downloadResume(): void {
